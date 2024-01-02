@@ -5,16 +5,16 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                dir('com/globant') {
-                    bat 'javac Main.java'
+                dir('src') {
+                    bat 'javac com/globant/Main.java'
                 }
             }
         }
         stage('Run') {
             steps {
                 echo 'Running...'
-                dir('com/globant') {
-                    bat 'java Main'
+                dir('src') {
+                    bat 'java com.globant.Main'
                 }
             }
         }
