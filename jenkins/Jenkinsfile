@@ -38,10 +38,6 @@ pipeline {
             steps {
                 echo 'Generating'
                 bat 'mvn allure:report'
-                archiveArtifacts artifacts: 'target/site/allure-maven-plugin/**', fingerprint: true
-
-                echo 'Compiling Results'
-                junit '**/target/surefire-reports/*.xml'
             }
         }
     }
@@ -53,7 +49,7 @@ pipeline {
                 jdk:'',
                 properties:[],
                 reportBuildPolicy:'ALWAYS',
-                results:[[path: 'target/allure-results']]
+                results:[[path: '*/allure-results']]
                 ])
             cleanWs()
         }
