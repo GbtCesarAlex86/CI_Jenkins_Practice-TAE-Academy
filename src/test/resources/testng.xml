@@ -1,0 +1,36 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestSuite">
+    <listeners>
+        <listener class-name="com.globant.utils.listeners.EnvReaderListener"/>
+    </listeners>
+    <parameter name="personId" value="2"/>
+    <test name="Trying to get a Person">
+        <parameter name="skinColor" value="gold"/>
+        <parameter name="filmCount" value="6"/>
+        <classes>
+            <class name="com.globant.tests.PeopleTest"/>
+        </classes>
+    </test>
+    <test name="Trying to get a movie from a Person">
+        <classes>
+            <class name="com.globant.tests.FilmTest"/>
+        </classes>
+    </test>
+    <test name="Trying to get a planet from a film">
+        <classes>
+            <class name="com.globant.tests.PlanetTest"/>
+        </classes>
+    </test>
+    <test name="Validate if the planet Url is the same">
+        <classes>
+            <class name="com.globant.tests.PlanetUrlTest"></class>
+        </classes>
+    </test>
+    <test name="Checking status code for a film request">
+        <parameter name="filmId" value="7"></parameter>
+        <parameter name="statusCode" value="404"></parameter>
+        <classes>
+            <class name="com.globant.tests.statusCodeCheckTest"></class>
+        </classes>
+    </test>
+</suite>

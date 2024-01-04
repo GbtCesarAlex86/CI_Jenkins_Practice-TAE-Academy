@@ -1,4 +1,4 @@
-package com.globant;
+package com.globant.lib;
 
 public class Main {
     public static void main(String[] args) {

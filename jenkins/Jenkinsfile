@@ -6,37 +6,32 @@ pipeline {
         maven "M3"
     }
 
-    environment {
-        MY_VARIABLE = 'my value'
+    parameters {
+            string(name: 'personId', defaultValue: '2', description: 'Person ID')
+            string(name: 'skinColor', defaultValue: 'gold', description: 'Skin Color')
+            string(name: 'filmCount', defaultValue: '6', description: 'Film Count')
+            string(name: 'filmId', defaultValue: '7', description: 'Film ID')
+            string(name: 'statusCode', defaultValue: '404', description: 'Status Code')
     }
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
                 echo 'Getting repository info...'
                 git branch: 'main', url: 'https://github.com/GbtCesarAlex86/CI_Practice-TAE-Academy.git'
-
-                echo 'Building...'
-                bat 'mvn clean install'
             }
         }
-        stage('Run') {
-            matrix {
-                axes {
-                    axis {
-                        name 'MY_VARIABLE'
-                        values 'value1', 'value2', 'value3'
-                    }
-                }
-                stages {
-                    stage('Run with different values') {
-                        steps {
-                            echo 'Running...'
-                            echo "MY_VARIABLE is ${env.MY_VARIABLE}"
-                            bat 'mvn exec:java -Dexec.mainClass=com.globant.Main'
-                        }
-                    }
-                }
+
+        stage('SettingUp Environment'){
+            steps{
+                echo 'Building...'
+                bat 'mvn clean verify'
+            }
+        }
+
+        stage('Running Tests') {
+            steps {
+                bat 'mvn test -DsuiteXmlFile=src/test/resources/testng.xml'
             }
         }
     }
