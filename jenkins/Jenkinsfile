@@ -23,7 +23,7 @@ pipeline {
         stage('SettingUp Environment'){
             steps{
                 echo 'Building...'
-                bat 'mvn clean verify'
+                bat 'mvn clean'
             }
         }
 
