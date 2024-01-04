@@ -31,6 +31,7 @@ mvn allure:report
 - -The report will be generated in the target/site/allure-maven-plugin directory.
 
 
-## SETTING UP JENKINS SERVER
+## SETTING UP THE PROJECT IN YOUR JENKINS SERVER
 
-> Create new item
+- Create new item
+- 
