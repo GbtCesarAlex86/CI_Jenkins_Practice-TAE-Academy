@@ -22,16 +22,20 @@ To run the tests locally, you need to have Java and Maven installed on your mach
 
 mvn test -DsuiteXmlFile=src/test/resources/testng.xml -DpersonId=2 -DfilmId=7 -DstatusCode=404
 
-- - NOTE: Replace 2, 7, and 404 with the ID of the person, the ID of the film, and the status code you want to use for testing, respectively.
+- NOTE: Replace 2, 7, and 404 with the ID of the person, the ID of the film, and the status code you want to use for testing, respectively.
 
 To generate an Allure report after running the tests, use the following command:
 
 mvn allure:report
 
-- -The report will be generated in the target/site/allure-maven-plugin directory.
+- The report will be generated in the target/site/allure-maven-plugin directory.
 
 
 ## SETTING UP THE PROJECT IN YOUR JENKINS SERVER
 
-- Create new item
+- Click on create new item
+- Select the pipeline option
+- Go to the pipeline details option and select Pipeline script with SCM
+- Select Git on the SCM option
+- Copy the repository link (https://github.com/GbtCesarAlex86/CI_Jenkins_Practice-TAE-Academy.git) and paste it in the "Repository URL" Box
 - 
