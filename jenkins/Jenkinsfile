@@ -31,7 +31,11 @@ pipeline {
 
         stage('Running Tests') {
             steps {
-                bat 'mvn test -DsuiteXmlFile=src/test/resources/testng.xml'
+                stage('Running Tests') {
+                    steps {
+                        bat 'mvn test -DsuiteXmlFile=src/test/resources/testng.xml -DpersonId=${params.personId} -DskinColor=${params.skinColor} -DfilmCount=${params.filmCount} -DfilmId=${params.filmId} -DstatusCode=${params.statusCode}'
+                    }
+                }
             }
         }
     }
