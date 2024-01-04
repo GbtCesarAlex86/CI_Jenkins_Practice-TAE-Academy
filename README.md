@@ -38,4 +38,11 @@ mvn allure:report
 - Go to the pipeline details option and select Pipeline script with SCM
 - Select Git on the SCM option
 - Copy the repository link (https://github.com/GbtCesarAlex86/CI_Jenkins_Practice-TAE-Academy.git) and paste it in the "Repository URL" Box
-- 
+- In the branches to build option, write the name of the branch, in this case */main
+- And finally, in the ScriptPath, write 'jenkins/Jenkinsfile', then click on Save.
+
+## HOW TO USE IT
+
+When you have the pipeline completely configured you know can request to Build by clicking the build option
+
+Have in mind that it will request for some parameters in order to work, by default you have some ones to test, but feel free to change them and get some different results
