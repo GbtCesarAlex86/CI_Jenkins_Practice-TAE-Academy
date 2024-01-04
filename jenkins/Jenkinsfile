@@ -13,6 +13,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                echo 'Getting repository info...'
+                git branch: 'main', url: 'https://github.com/GbtCesarAlex86/CI_Practice-TAE-Academy.git'
+
                 echo 'Building...'
                 bat 'mvn clean install'
             }
