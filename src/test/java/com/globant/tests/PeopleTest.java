@@ -10,8 +10,8 @@ public class PeopleTest extends BaseTest {
 
     @Test
     @Parameters({"personId"})
-    public void peopleEndPointTest(int personId) {
-        Person personResponse = getPerson(personId);
+    public void peopleEndPointTest(String personId) {
+        Person personResponse = getPerson(Integer.parseInt(personId));
         validateSkinColor(personResponse, Constants.SKIN_COLOR);
         validateAmountOfFilmsItAppears(personResponse, Constants.FILM_COUNT);
     }

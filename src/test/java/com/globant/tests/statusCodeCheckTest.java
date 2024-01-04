@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 public class statusCodeCheckTest extends BaseTest {
     @Test
     @Parameters({"filmId", "statusCode"})
-    public void filmStatusCodeTest(int filmId, int statusCode) {
-        validateResponseStatusCode(filmId, statusCode);
+    public void filmStatusCodeTest(String filmId, String statusCode) {
+        validateResponseStatusCode(Integer.parseInt(filmId), Integer.parseInt(statusCode));
     }
 }

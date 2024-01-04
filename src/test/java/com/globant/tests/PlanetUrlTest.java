@@ -10,8 +10,8 @@ import org.testng.annotations.Test;
 public class PlanetUrlTest extends BaseTest {
     @Test
     @Parameters({"personId"})
-    public void planetUrlIsCorrectTest(int personId) {
-        Person personResponse = getPerson(personId);
+    public void planetUrlIsCorrectTest(String personId) {
+        Person personResponse = getPerson(Integer.parseInt(personId));
         Film filmResponse = getFilm(getIdAsString(personResponse.getFilms().get(1)));
         Planet planetResponse = getPlanet(getIdAsString(filmResponse.getPlanets().get(0)));
 

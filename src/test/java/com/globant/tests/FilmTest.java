@@ -10,8 +10,8 @@ public class FilmTest extends BaseTest {
 
     @Test
     @Parameters({"personId"})
-    public void filmFromPersonTest(int personId) {
-        Person personResponse = getPerson(personId);
+    public void filmFromPersonTest(String personId) {
+        Person personResponse = getPerson(Integer.parseInt(personId));
         Film filmResponse = getFilm(getIdAsString(personResponse.getFilms().get(1)));
 
         validateReleaseDateFormat(filmResponse);
