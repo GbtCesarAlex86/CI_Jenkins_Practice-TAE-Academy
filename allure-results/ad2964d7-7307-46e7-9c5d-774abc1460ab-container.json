@@ -1,1 +1,0 @@
-{"uuid":"ad2964d7-7307-46e7-9c5d-774abc1460ab","name":"Trying to get a planet from a film","children":["0d9fa4b2-cdaf-42ce-86b9-c06df977b857"],"befores":[{"name":"connectionSetUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1704409229656,"stop":1704409229656}],"afters":[],"start":1704409229655,"stop":1704409234546}
