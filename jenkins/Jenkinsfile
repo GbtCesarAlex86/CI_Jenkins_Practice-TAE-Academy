@@ -29,16 +29,41 @@ pipeline {
 
         stage('Running Tests') {
             steps {
-                bat "mvn test -DsuiteXmlFile=src/test/resources/testng.xml -DpersonId=${params.personId} -DskinColor=${params.skinColor} -DfilmCount=${params.filmCount} -DfilmId=${params.filmId} -DstatusCode=${params.statusCode}"
+                echo 'Using personId = ${params.personId}, filmId = ${params.filmId}, statusCode = ${params.statusCode}'
+                bat "mvn test -DsuiteXmlFile=src/test/resources/testng.xml -DpersonId=${params.personId} -DfilmId=${params.filmId} -DstatusCode=${params.statusCode}"
+            }
+        }
+
+        stage('Generating Allure Report') {
+            steps {
+                echo 'Generating'
+                bat 'mvn allure:report'
+                archiveArtifacts artifacts: 'target/site/allure-maven-plugin/**', fingerprint: true
+
+                echo 'Compiling Results'
+                junit '**/target/surefire-reports/*.xml'
             }
         }
     }
 
     post {
         always {
+            allure([
+                includeProperties: false,
+                jdk:'',
+                properties:[],
+                reportBuildPolicy:'ALWAYS',
+                results:[[path: 'target/allure-results']]
+                ])
             cleanWs()
         }
+
+        success{
+            echo 'EXECUTION SUCCEED'
+        }
+
         failure {
+            echo 'The execution failed, please check the results'
             mail to: 'cesar.tipan@globant.com',
                  subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
                  body: "Something is wrong with ${env.BUILD_URL}"

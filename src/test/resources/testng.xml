@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="TestSuite">
+<suite name="TestSuite" junit="true">
     <listeners>
         <listener class-name="com.globant.utils.listeners.EnvReaderListener"/>
     </listeners>
