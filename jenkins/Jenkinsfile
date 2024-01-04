@@ -8,8 +8,6 @@ pipeline {
 
     parameters {
             string(name: 'personId', defaultValue: '2', description: 'Person ID')
-            string(name: 'skinColor', defaultValue: 'gold', description: 'Skin Color')
-            string(name: 'filmCount', defaultValue: '6', description: 'Film Count')
             string(name: 'filmId', defaultValue: '7', description: 'Film ID')
             string(name: 'statusCode', defaultValue: '404', description: 'Status Code')
     }
