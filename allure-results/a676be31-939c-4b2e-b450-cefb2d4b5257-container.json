@@ -1,0 +1,1 @@
+{"uuid":"a676be31-939c-4b2e-b450-cefb2d4b5257","name":"Validate if the planet Url is the same","children":["0e29a7f1-7691-4a35-b784-7c749fed56e2"],"befores":[{"name":"connectionSetUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1704409234556,"stop":1704409234556}],"afters":[],"start":1704409234555,"stop":1704409240508}

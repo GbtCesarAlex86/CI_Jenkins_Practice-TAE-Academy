@@ -1,0 +1,1 @@
+{"uuid":"cb5d9f9a-1e94-41cc-8d64-4abffeba60f9","name":"Trying to get a movie from a Person","children":["9a035a83-5768-4291-81bc-3218f8f9803b"],"befores":[{"name":"connectionSetUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1704409226430,"stop":1704409226430}],"afters":[],"start":1704409226429,"stop":1704409229642}
