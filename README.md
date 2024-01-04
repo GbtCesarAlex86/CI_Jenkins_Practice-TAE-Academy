@@ -29,3 +29,8 @@ To generate an Allure report after running the tests, use the following command:
 mvn allure:report
 
 - -The report will be generated in the target/site/allure-maven-plugin directory.
+
+
+## SETTING UP JENKINS SERVER
+
+> Create new item
